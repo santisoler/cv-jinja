@@ -1,9 +1,9 @@
 ---
 title: {{ info.name }}
-margin-left: 25mm
-margin-right: 25mm
-margin-top: 30mm
-margin-bottom: 30mm
+margin-left: {{ page_layout.margin_left }}
+margin-right: {{ page_layout.margin_right }}
+margin-top: {{ page_layout.margin_top }}
+margin-bottom: {{ page_layout.margin_bottom }}
 ---
 
 {% if "affiliation" in info %}

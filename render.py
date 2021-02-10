@@ -1,23 +1,52 @@
-#!/usr/env python
+#!/usr/bin/env python
+import argparse
 import yaml
 from jinja2 import Environment
+
+DESCRIPTION = """
+Renders the CV using Jinja2 templates
+"""
+
+
+def get_argparser():
+    """
+    Create the arguments parser object
+    """
+    parser = argparse.ArgumentParser(description=DESCRIPTION)
+    parser.add_argument(
+        "--yml",
+        metavar="cv.yml",
+        required=True,
+        type=argparse.FileType("r"),
+        help="YAML file containing the data of the CV",
+    )
+    parser.add_argument(
+        "--template",
+        required=True,
+        type=argparse.FileType("r"),
+        help="Jinja2 template file for building the CV",
+    )
+    parser.add_argument(
+        "--output",
+        required=True,
+        type=argparse.FileType("w"),
+        help="Jinja2 template file for building the CV",
+    )
+    return parser
 
 
 if __name__ == "__main__":
 
+    # Create the arguments parser
+    parser = get_argparser()
+    arguments = parser.parse_args()
+
     # Read cv.yml file
-    with open("cv.yml", "r") as f:
-        cv_data = yaml.load(f, Loader=yaml.FullLoader)
+    cv_data = yaml.load(arguments.yml, Loader=yaml.FullLoader)
 
     # Read Markdown template
-    with open("cv_template.md", "r") as f:
-        md_template = f.read()
-    md_environment = Environment().from_string(md_template)
+    template = arguments.template.read()
+    environment = Environment().from_string(template)
 
-    with open("out.md", "w") as f:
-        f.write(
-            md_environment.render(
-                info=cv_data["info"],
-                sections=cv_data["sections"],
-            )
-        )
+    # Render the CV
+    arguments.output.write(environment.render(**cv_data))
