@@ -43,7 +43,7 @@ margin-bottom: {{ page_layout.margin_bottom }}
     {% if item.thesis %}_Thesis_: {{ item.thesis }}{% endif %}
 
     {% if item.advisor %}_Advisor_: {{ item.advisor }}{% endif %}
-    {% if item.coadvisor %}_Advisor_: {{ item.advisor }}{% endif %}
+    {% if item.coadvisor %}_Co-advisor_: {{ item.coadvisor }}{% endif %}
 {% endfor %}
 {%- endif %}
 {%- endif %}
