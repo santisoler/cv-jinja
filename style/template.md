@@ -1,5 +1,5 @@
 ---
-title: {{ info.name }}
+title: {{ info.first_name }} {{ info.last_name }}
 {%- if page_layout.margin_left %}
 margin-left: {{ page_layout.margin_left }}
 {%- endif %}

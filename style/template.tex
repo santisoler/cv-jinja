@@ -1,0 +1,72 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\usepackage[
+{%- if moderncv.hmargin -%}
+    hmargin={{ moderncv.hmargin }},
+{%- endif -%}
+{%- if moderncv.vmargin -%}
+    vmargin={{ moderncv.vmargin }},
+{%- endif -%}
+]{geometry}
+\moderncvstyle{classic}
+\moderncvcolor{orange}
+
+\firstname{ {{ info.first_name }} }
+\familyname{ {{ info.last_name }} }
+\email{ {{ info.email }} }
+\homepage{ {{ info.website }} }
+\extrainfo{
+    {%- if info.orcid -%}
+        ORCID: \href{ https://orcid.org/{{ info.orcid }} }{ {{ info.orcid }} }
+    {%- endif -%}
+}
+
+\begin{document}
+
+\makecvtitle
+
+
+{% for section in sections %}
+
+{% if section.subsection %}
+\subsection{ {{ section.name }} }
+{% else %}
+\section{ {{ section.name }} }
+{% endif %}
+
+
+{% if section.type == "education" %}
+{%- if "items" in section %}
+{% for item in section["items"] %}
+\cventry{
+    {{ item.date }}
+}{
+    {{ item.title }}
+}{
+    {{ item.institution }}
+} {} {}
+{
+    {%- if item.thesis %} \emph{Thesis}: {{ item.thesis }}\\ {%- endif %}
+    {%- if item.advisor %} \emph{Advisor}: {{ item.advisor }}\\ {%- endif %}
+    {%- if item.coadvisor %} \emph{Co-advisor}: {{ item.advisor }}\\ {%- endif %}
+}
+{}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if section.type == "awards" %}
+{%- if "items" in section %}
+{% for item in section["items"] %}
+\cvitem{
+    {{ item.date }}
+}{
+    {{ item.title }}
+}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% endfor %}
+
+
+\end{document}
