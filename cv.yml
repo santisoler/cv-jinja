@@ -1,0 +1,173 @@
+info:
+  name: Santiago Soler
+  email: santiago.r.soler@gmail.com
+  website: https://santisoler.github.io
+  orcid: 0000-0001-9202-5317
+  affiliation:
+    - Instituto Geofísico y Sismológico Volponi, Universidad Nacional de San
+      Juan
+    - CONICET, Argentina
+    - Member of the Computer-Oriented Geoscience Lab
+
+sections:
+  - name: Education
+    type: education
+    items:
+      - title: PhD Student in Geophysics
+        date: Since 2017
+        institution: FCFyN, Universidad Nacional de San Juan
+        thesis: Joint seismological and gravity inversion models in spherical
+        advisor: Mario Gimenez
+        coadvisor: Leonardo Uieda
+      - title: Licentitate in Physics
+        date: 2009 - 2015
+        institution: FCEIA, Universidad Nacional de Rosario
+        thesis: Spectral methods for the determination of the Curie Depth Point
+        advisor: Mario Gimenez
+
+  - name: Awards
+    type: awards
+    items:
+      - title: CONICET PhD Scholarship
+        date: 2017 - 2022
+      - title: Fundación Josefina Prats Award - Licenciatura en Física
+        date: 2016
+      - title: University Scholarship granted by Fundación del Banco de Santa Fe
+        date: 2012
+      - title: Santander Río National Award to Academic Merit 2012
+        date: 2012
+      - title: Josefina Prats Award - IFIR 2012
+        date: 2012
+
+  - name: Teaching
+    type: teaching
+    items:
+      - course: Introducción a Python para Científicxs
+        date: 2020
+        institution: Universidad Nacional de San Juan
+        position: Instructor
+      - course: "Tutorial: From scattered data to gridded products using Verde"
+        date: 2020
+        institution: Transform 2020, Software Underground
+        position: Assistant Instructor
+      - course: Physics I and Statistical Mechanics
+        date: 2017 - 2019
+        institution: Departamento de Geofísica y Astronomía, Facultad de
+          Ciencias Exactas, Físicas y Naturales, Universidad Nacional de San Juan
+        position: Jefe de Trabajos Prácticos (assistant professor of practice)
+      - course: "Introductory course to LaTeX: How to produce high quality documents"
+        date: 2017
+        institution: Secretaría de Extensión, Facultad de Ciencias
+          Exactas, Físicas y Naturales, Universidad Nacional de San Juan
+        extra: Santiago Soler and Agustina Pesce
+      - course: Introduction to Science and Physics I
+        date: 2013 - 2015
+        institution: Departamento de Física, Escuela de Ciencias Exactas
+          y Naturales, Facultad de Ciencias Exactas, Ingeniería
+          y Agrimensura, Universidad Nacional de Rosario
+        position: Ayudante de Segunda (undergraduate assistant teacher)
+
+  - name: Publications
+    type: publication
+
+  - name: Peer-reviewed papers
+    type: publication
+    subsection: true
+    items:
+      - title: "Pooch: A friend to fetch your data files"
+        date: 2020
+        authors: Leonardo Uieda, Santiago Rubén Soler Rémi Rampin Hugo
+          vanKemenade Matthew Turk Daniel Shapero Anderson Banihirwe and
+          John Leeman
+        journal: Journal of Open-Source Software
+        doi: "10.21105/joss.01943"
+      - title: Gravitational field calculation in spherical coordinates using
+          variable densities in depth
+        date: 2019
+        authors: Santiago R Soler, Agustina Pesce, Mario E Gimenez, Leonardo
+          Uieda
+        journal: Geophysical Journal International
+        doi: 10.1093/gji/ggz277
+      - title: "Transient plate contraction between two simultaneous slab
+          windows: Insights from Paleogene tectonics of the Patagonian Andes"
+        date: 2018
+        authors: Guido M. Gianni, Agustina Pesce, Santiago R. Soler
+        journal: Journal of Geodynamics
+        doi: 10.1016/j.jog.2018.07.008
+      - title: Analysis of the Illapel MW=8.3 thrust earthquake rupture zone
+          using GOCE-derived gradients
+        date: 2017
+        authors: Orlando Álvarez, Agustina Pesce, Mario Gimenez, Andres
+          Folguera, Santiago Soler and Wenjin Chen
+        journal: Pure and Applied Geophysics
+        doi: 10.1007/s00024-016-1376-y
+      - title: Effective elastic thickness in the Central Andes. Correlation to
+          orogenic deformation styles and lower crust high-gravity anomaly
+        date: 2017
+        journal: Journal of South American Earth Sciences
+        authors: Héctor P.A. García, Guido M.Gianni, Marianela N.Lupari, Marcos
+          A.Sánchez, Santiago R. Soler, Francisco Ruiz, Federico G. Lince Klinger
+        doi: 10.1016/j.jsames.2017.11.021
+
+  - name: Conference proceedings
+    type: publication
+    subsection: true
+    items:
+      - title: How to grid gravmag data with Harmonica
+        date: 2020
+        authors: Santiago Soler
+        journal: Transform2020, Software Underground
+        extra: Lightning talk
+      - title: A better strategy for interpolating gravity and magnetic data
+        date: 2020
+        authors: Santiago Soler and Leonardo Uieda
+        journal: EGU2020 General Assembly
+        doi: 10.5194/egusphere-egu2020-549
+      - title: Evaluating the accuracy of equivalent-source predictions using
+          cross-validation
+        date: 2020
+        authors: Leonardo Uieda and Santiago Soler
+        journal: EGU2020 General Assembly
+        doi: 10.5194/egusphere-egu2020-15729
+      - title: Experiencias en el desarrollo de Fatiando a Terra
+        date: 2019
+        authors: Santiago Soler
+        journal: Taller Argentino de Computación Científica
+        doi: 10.6084/m9.figshare.10013006
+      - title: Gravitational fields of tesseroids with variable density
+        date: 2019
+        journal: LAPIS 2019
+        authors: Santiago R Soler, Agustina Pesce, Mario E Gimenez, Leonardo
+          Uieda
+        doi: 10.6084/m9.figshare.8242439
+      - title: "Tesseroides con densidad variable: modelo directo con software
+          libre"
+        date: 2017
+        authors: Soler S.R, Pesce A, Uieda L, Giménez M.E
+        journal: I Congreso Binacional de Investigación Científica
+          y V Encuentro de Jóvenes Investigadores, San Juan
+      - title: Magnetic characterization of the Loncopué trough, Argentina
+        date: 2017
+        authors: Pesce A, Giménez M.E, Folguera A, Gianni G, Soler S.R
+        journal: XX Congreso Geológico Argentino
+      - title: Anomalías gravimétricas y magnéticas corticales del sur de la
+          provincia volcánica de La Payenia, asociadas al tearing de la Placa
+          de Nazca y anomalías mantélicas
+        date: 2017
+        authors:
+          Astort A., Colavitto B., Sagripanti L., García H.P.A., Soler S.R.,
+          Ruiz F., Folguera A.
+        journal: XX Congreso Geológico Argentino
+      - title: "Análisis flexural de la cuenca cretácico-paleógena del
+          noroeste argentino. la subcuenca Lomas de Olmedo: zona de transición
+          entre dos mecanismos de deformación distintos"
+        date: 2016
+        authors: García H.P.A, Soler S.R, Gianni G, Ruiz F
+        journal: Primer Simposio de Tectónica Sudamericana
+      - title: Crustal Magmatic Anomalies from the Southern Payenia Volcanic
+          Plateau, Associated with The Nazca Plate Tearing and Plume Head from
+          Gravimetric and Magnetic Data
+        date: 2016
+        authors: Astort A, Ruiz F, García H.P.A, Soler S.R, Echaurren A,
+          Folguera A
+        journal: Primer Simposio de Tectónica Sudamericada
