@@ -1,6 +1,6 @@
 CV_YML = cv.yml
-MARKDOWN_TEMPLATE = style/template.md
-LATEX_TEMPLATE = style/template.tex
+MARKDOWN_TEMPLATE = layouts/template.md
+LATEX_TEMPLATE = layouts/template.tex
 
 OUTDIR = _build
 CV_MARKDOWN = $(OUTDIR)/cv.md
