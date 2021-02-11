@@ -6,7 +6,6 @@ from jinja2 import Environment
 DESCRIPTION = """
 Renders the CV using Jinja2 templates
 """
-JINJA2_KEYS = ["info", "page_layout", "sections"]
 
 
 def get_argparser():
@@ -44,11 +43,6 @@ if __name__ == "__main__":
 
     # Read cv.yml file
     cv_data = yaml.load(arguments.yml, Loader=yaml.FullLoader)
-
-    # Fill the cv_data with missing jinja2 keys
-    for key in JINJA2_KEYS:
-        if key not in cv_data:
-            cv_data[key] = None
 
     # Read Markdown template
     template = arguments.template.read()
