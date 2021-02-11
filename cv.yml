@@ -16,6 +16,7 @@ moderncv:
   papersize: a4paper
   fontsize: 12pt
   font: helvet
+  title: Curriculum Vitae
 
 sections:
   - name: Education
