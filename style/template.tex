@@ -1,4 +1,24 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
+\documentclass[
+{%- if moderncv.fontsize -%}
+    {{ moderncv.fontsize }},
+{%- endif -%}
+{%- if moderncv.papersize -%}
+    {{ moderncv.papersize }},
+{%- endif -%}
+{%- if moderncv.font -%}
+    {%- if moderncv.font in ("sans", "roman") -%}
+        {{ moderncv.font }},
+    {%- endif -%}
+{%- endif -%}
+]{moderncv}
+
+{%- if moderncv.font %}
+{%- if moderncv.font == "helvet" %}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+{%- endif %}
+{%- endif %}
+
 \usepackage[
 {%- if moderncv.hmargin -%}
     hmargin={{ moderncv.hmargin }},
@@ -7,16 +27,40 @@
     vmargin={{ moderncv.vmargin }},
 {%- endif -%}
 ]{geometry}
+{%- if moderncv.style %}
+\moderncvstyle{ {{ moderncv.style }} }
+{%- else %}
 \moderncvstyle{classic}
+{%- endif %}
+{%- if moderncv.color %}
+\moderncvcolor{ {{ moderncv.color }} }
+{%- else %}
 \moderncvcolor{orange}
+{%- endif %}
 
-\firstname{ {{ info.first_name }} }
-\familyname{ {{ info.last_name }} }
-\email{ {{ info.email }} }
-\homepage{ {{ info.website }} }
+\usepackage[utf8]{inputenc}
+
+{%- if info.first_name %}
+\firstname{ {{- info.first_name -}} }
+{%- endif %}
+{%- if info.last_name %}
+\familyname{ {{- info.last_name -}} }
+{%- endif %}
+{%- if moderncv.title %}
+\title{ {{- moderncv.title -}} }
+{%- endif %}
+{%- if info.email %}
+\email{ {{- info.email -}} }
+{%- endif %}
+{%- if info.website %}
+\homepage{ {{- info.website -}} }
+{%- endif %}
+{%- if info.github %}
+\social[github]{ {{- info.github -}} }
+{%- endif %}
 \extrainfo{
     {%- if info.orcid -%}
-        ORCID: \href{ https://orcid.org/{{ info.orcid }} }{ {{ info.orcid }} }
+        ORCID: \href{ https://orcid.org/{{- info.orcid -}} }{ {{- info.orcid -}} }
     {%- endif -%}
 }
 
@@ -28,9 +72,9 @@
 {% for section in sections %}
 
 {% if section.subsection %}
-\subsection{ {{ section.name }} }
+\subsection{ {{- section.name -}} }
 {% else %}
-\section{ {{ section.name }} }
+\section{ {{- section.name -}} }
 {% endif %}
 
 
@@ -38,18 +82,17 @@
 {%- if "items" in section %}
 {% for item in section["items"] %}
 \cventry{
-    {{ item.date }}
+    {%- if item.date -%} {{ item.date }} {%- endif -%}
 }{
-    {{ item.title }}
-}{
-    {{ item.institution }}
-} {} {}
-{
+    {%- if item.title -%} {{ item.title }} {%- endif -%}
+}{}{
+    {%- if item.institution -%} {{ item.institution }} {%- endif -%}
+}{}{
     {%- if item.thesis %} \emph{Thesis}: {{ item.thesis }}\\ {%- endif %}
     {%- if item.advisor %} \emph{Advisor}: {{ item.advisor }}\\ {%- endif %}
-    {%- if item.coadvisor %} \emph{Co-advisor}: {{ item.advisor }}\\ {%- endif %}
+    {%- if item.coadvisor %} \emph{Co-advisor}: {{ item.coadvisor }}\\ {%- endif %}
 }
-{}
+
 {% endfor %}
 {% endif %}
 {% endif %}
