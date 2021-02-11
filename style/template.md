@@ -1,17 +1,5 @@
 ---
 title: {{ info.first_name }} {{ info.last_name }}
-{%- if page_layout.margin_left %}
-margin-left: {{ page_layout.margin_left }}
-{%- endif %}
-{%- if page_layout.margin_right %}
-margin-right: {{ page_layout.margin_right }}
-{%- endif %}
-{%- if page_layout.margin_top %}
-margin-top: {{ page_layout.margin_top }}
-{%- endif %}
-{%- if page_layout.margin_bottom %}
-margin-bottom: {{ page_layout.margin_bottom }}
-{%- endif %}
 ---
 
 {% if "affiliation" in info %}
