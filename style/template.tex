@@ -58,13 +58,53 @@
 {%- if "items" in section %}
 {% for item in section["items"] %}
 \cvitem{
-    {{ item.date }}
+    {%- if item.date -%} {{ item.date }} {%- endif -%}
 }{
-    {{ item.title }}
+    {%- if item.title -%} {{ item.title }} {%- endif -%}
 }
 {% endfor %}
 {% endif %}
 {% endif %}
+
+{%- if section.type == "teaching" %}
+{%- if "items" in section %}
+{% for item in section["items"] %}
+\cventry{
+    {%- if item.date -%} {{ item.date }} {%- endif -%}
+}{
+    {%- if item.course -%} {{ item.course }} {%- endif -%}
+}{
+    {%- if item.position -%} {{ item.position }} {%- endif -%}
+}{
+    {%- if item.institution -%} {{ item.institution }} {%- endif -%}
+}{
+    {%- if item.extra -%} {{ item.extra }} {%- endif -%}
+}{}
+{% endfor %}
+{%- endif %}
+{%- endif %}
+
+{%- if section.type == "publication" %}
+{%- if "items" in section %}
+{% for item in section["items"] %}
+\cventry{
+    {%- if item.date -%} {{ item.date }} {%- endif -%}
+}{
+    {%- if item.title -%} {{ item.title }} {%- endif -%}
+}{
+    {%- if item.journal -%} {{ item.journal }} {%- endif -%}
+}{
+    {%- if item.authors -%} {{ item.authors }} {%- endif -%}
+}{
+    {%- if item.extra -%} {{ item.extra }} {%- endif -%}
+}{
+    {%- if item.doi -%}
+    doi:\href{https://doi.org/{{ item.doi }} }{ {{ item.doi }} }
+    {%- endif -%}
+}
+{% endfor %}
+{%- endif %}
+{%- endif %}
 
 {% endfor %}
 
