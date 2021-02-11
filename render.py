@@ -1,7 +1,9 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import argparse
 import yaml
-from jinja2 import Environment
+from pathlib import Path
+from jinja2 import Environment, FileSystemLoader
 
 DESCRIPTION = """
 Renders the CV using Jinja2 templates
@@ -45,8 +47,10 @@ if __name__ == "__main__":
     cv_data = yaml.load(arguments.yml, Loader=yaml.FullLoader)
 
     # Read Markdown template
-    template = arguments.template.read()
-    environment = Environment().from_string(template)
+    template_file = Path(str(arguments.template.name))
+    loader = FileSystemLoader(str(template_file.parent))
+    environment = Environment(loader=loader)
+    template = environment.get_template(str(template_file.name))
 
     # Render the CV
-    arguments.output.write(environment.render(**cv_data))
+    arguments.output.write(template.render(**cv_data))
